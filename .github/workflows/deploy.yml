@@ -1,9 +1,11 @@
 name: Deploy All Workers
 
 on:
+  # This triggers the workflow on a schedule (9 AM and 9 PM UTC)
   schedule:
     - cron: '0 9,21 * * *'  # Runs at 9 AM and 9 PM UTC daily
-  workflow_dispatch:         # Manual trigger
+  # This allows you to manually trigger the workflow from GitHub UI
+  workflow_dispatch:
 
 jobs:
   deploy:
