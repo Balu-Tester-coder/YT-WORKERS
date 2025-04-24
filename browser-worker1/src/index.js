@@ -1,7 +1,7 @@
 //latest
 import puppeteer from '@cloudflare/puppeteer';
 
-export class PuppeteerSession1 {
+export class PuppeteerSession {
 	constructor(state, env) {
 		this.state = state;
 		this.env = env;
@@ -131,8 +131,8 @@ export default {
 		let pathComponents = url.pathname.split('/').filter(Boolean); // Split and remove empty parts
 		let lastPathComponent = pathComponents.length > 0 ? pathComponents[pathComponents.length - 1] : '';
 		let name = 'puppeteer-session' + lastPathComponent;
-		let id = env.PUPPETEER_SESSIONS1.idFromName(name);
-		let stub = env.PUPPETEER_SESSIONS1.get(id);
+		let id = env.PUPPETEER_SESSIONS.idFromName(name);
+		let stub = env.PUPPETEER_SESSIONS.get(id);
 		return stub.fetch(request);
 	},
 };
