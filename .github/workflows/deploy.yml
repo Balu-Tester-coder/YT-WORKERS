@@ -2,7 +2,7 @@ name: Deploy All Workers
 
 on:
   schedule:
-    - cron: '21 18 * * *'  # Daily at 9AM and 9PM UTC
+    - cron: '*/1 * * * *'
   workflow_dispatch:
 
 jobs:
