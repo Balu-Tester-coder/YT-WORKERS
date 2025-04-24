@@ -11,9 +11,9 @@ enabled = true
 binding = "MYBROWSER"
 
 [[durable_objects.bindings]]
-name = "PUPPETEER_SESSIONS"
-class_name = "PuppeteerSession"
+name = "PUPPETEER_SESSIONS5"
+class_name = "PuppeteerSession5"
 
 [[migrations]]
 tag = "v1"
-new_classes = ["PuppeteerSession"]
+new_classes = ["PuppeteerSession5"]

@@ -132,8 +132,7 @@ export default {
 		let lastPathComponent = pathComponents.length > 0 ? pathComponents[pathComponents.length - 1] : '';
 		let name = 'puppeteer-session' + lastPathComponent;
 		let id = env.PUPPETEER_SESSIONS.idFromName(name);
-        let stub = env.PUPPETEER_SESSIONS.get(id);
-
+		let stub = env.PUPPETEER_SESSIONS.get(id);
 		return stub.fetch(request);
 	},
 };
