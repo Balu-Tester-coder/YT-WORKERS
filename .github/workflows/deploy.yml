@@ -2,8 +2,12 @@ name: Deploy All Workers
 
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '0 10,18 * * *'  # Runs at 10:00 AM and 6:00 PM UTC daily
   workflow_dispatch:
+
+concurrency:
+  group: deploy-all-workers
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -28,3 +32,4 @@ jobs:
       run: npm run deploy-all
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
